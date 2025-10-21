@@ -1,0 +1,177 @@
+/* css/Style.css
+   Minimalista — Gestor de Productos
+*/
+
+:root{
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --danger: #ef4444;
+  --border: #e6e9ee;
+  --radius: 10px;
+  --max-width: 880px;
+  --pad: 18px;
+  --shadow: 0 6px 20px rgba(18, 24, 40, 0.06);
+  --font-sans: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+
+/* body como contenedor centrado */
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg, var(--bg), #ffffff 60%);
+  color:#0f172a;
+
+  display:flex;
+  flex-direction:column;   /* apilar en columna */
+  align-items:center;      /* centrar horizontal */
+  padding:32px 16px;
+}
+
+/* contenedor principal */
+main, header, footer {
+  width:100%;
+  max-width:var(--max-width);
+}
+
+/* encabezado */
+header{
+  text-align:center;
+  margin-bottom:28px;
+}
+.titulo-principal{
+  margin:0;
+  font-size:2.4rem;   /* más grande */
+  font-weight:700;
+  letter-spacing:0.3px;
+  color:#0b1220;
+}
+header hr{
+  border:0;
+  height:2px;
+  background:var(--accent);
+  margin-top:14px;
+  border-radius:4px;
+}
+
+/* cada sección una debajo de otra */
+section{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:var(--pad);
+  box-shadow:var(--shadow);
+  margin-bottom:28px;
+  border:1px solid var(--border);
+}
+
+/* títulos de sección */
+section h2{
+  margin:0 0 16px 0;
+  font-size:1.3rem;
+  color:#071033;
+  font-weight:600;
+}
+
+/* tabla */
+.tabla-productos{
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.95rem;
+}
+.tabla-productos thead th{
+  text-align:left;
+  padding:10px 12px;
+  font-weight:600;
+  color:var(--muted);
+  border-bottom:1px solid var(--border);
+}
+.tabla-productos tbody td{
+  padding:12px;
+  border-bottom:1px dashed #f0f2f6;
+}
+.no-productos{
+  text-align:center;
+  color:var(--muted);
+  padding:22px;
+  font-style:italic;
+}
+
+/* formularios */
+form p{ margin:0 0 14px 0; }
+label{ font-size:0.9rem; display:block; }
+input, button{
+  width:100%; /* cada input ocupa toda la fila */
+  max-width:100%;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"]{
+  padding:10px 12px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#fbfdff;
+  font-size:0.95rem;
+  transition:0.2s;
+}
+input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* botones */
+button{
+  padding:12px 14px;
+  border-radius:10px;
+  border:0;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+button:hover{ opacity:0.9; transform:translateY(-2px); }
+button:active{ transform:translateY(0); }
+
+/* pie */
+footer{
+  text-align:center;
+  margin-top:12px;
+  max-width:var(--max-width);
+}
+footer hr{
+  border:0;
+  height:1px;
+  background:var(--border);
+  margin:10px 0;
+}
+.pie{
+  color:var(--muted);
+  font-size:0.85rem;
+}
+
+/* oculto */
+.oculto{ display:none !important }
+
+/* responsivo simple */
+@media (max-width:720px){
+  body{ padding:20px 12px; }
+  .titulo-principal{ font-size:1.8rem; }
+
+  .tabla-productos thead{ display:none } /* ocultar encabezado */
+  .tabla-productos tbody td{
+    display:block;
+    width:100%;
+    padding:10px 12px;
+  }
+  .tabla-productos tbody tr{
+    margin-bottom:10px;
+    background:#fbfdff;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(7,17,34,0.03);
+    border:1px solid var(--border);
+  }
+}
