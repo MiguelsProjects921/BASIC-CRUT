@@ -1,0 +1,43 @@
+Proyecto CRUD en PHP y MySQL
+
+Este proyecto permite crear, leer, actualizar y eliminar datos (CRUD) usando PHP y MySQL.
+Todo el sistema se ejecuta desde el archivo principal CRUT/index.php.
+
+Estructura del proyecto:
+
+CRUT/index.php -> archivo principal del sistema
+
+config/conexion.php -> conexión a la base de datos
+
+DB/base.sql -> archivo con la estructura de la base de datos
+
+Requisitos:
+
+PHP 7.4 o superior
+
+MySQL o MariaDB
+
+Servidor local (XAMPP, WAMP o Laragon)
+
+Pasos para ejecutar:
+
+Importar el archivo de base de datos ubicado en DB/base.sql en MySQL o phpMyAdmin.
+Esto creará automáticamente la base de datos y las tablas necesarias.
+
+Verificar la conexión a la base de datos en config/conexion.php:
+
+<?php $host = "localhost"; $user = "root"; $pass = ""; $db = "crud_db"; $conn = new mysqli($host, $user, $pass, $db); if ($conn->connect_error) { die("Error de conexión: " . $conn->connect_error); } ?>
+
+Iniciar el servidor local y abrir en el navegador:
+
+http://localhost/CRUT/index.php
+
+Acciones disponibles:
+
+Crear: agregar nuevos registros.
+
+Leer: mostrar los registros existentes.
+
+Actualizar: editar registros guardados.
+
+Eliminar: borrar registros de la base de datos.
